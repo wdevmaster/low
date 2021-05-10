@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@adonisjs/ace": "^4.0.7",
+    "@adonisjs/antl": "^2.1.0",
     "@adonisjs/auth": "^2.0.10",
     "@adonisjs/bodyparser": "^1.0.8",
     "@adonisjs/cors": "^1.0.2",
@@ -25,6 +26,7 @@
     "@adonisjs/lucid": "^4.0.22",
     "@adonisjs/session": "^1.0.19",
     "@adonisjs/shield": "^1.0.4",
+    "@adonisjs/validator": "^5.1.0",
     "cross-env": "^3.1.4",
     "mysql": "^2.18.1",
     "nuxt": "latest",

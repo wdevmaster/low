@@ -18,7 +18,7 @@ Factory.blueprint('App/Models/User', async (faker, i, data) => {
   return {
     email: data.email,
     username: faker.username(),
-    password: await Hash.make('secret')
+    password: 'secret'
   }
 })
 
