@@ -1,18 +1,41 @@
 <template>
-  <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      Universal Vue.js Applications Framework
-    </h1>
-    <nuxt-link class="button" to="/about">
-      About page
-    </nuxt-link>
-  </section>
+  <!-- Page content-->
+  <div>
+    <!-- Banner -->
+    <t-banner/>
+    <!-- About -->
+    <t-about/>
+    <!-- Portfolio -->
+    <t-portfolio/>
+    <!-- Services -->
+    <t-services/>
+    <!-- Team -->
+    <t-team/>
+    <!-- Testimonial -->
+    <t-testimonial/>
+  </div>
 </template>
 
-<style scoped>
-.title
-{
-  margin: 50px 0;
+<script>
+import TBanner from '~/components/Banner'
+import TAbout from '~/components/About'
+import TPortfolio from '~/components/Portfolio'
+import TServices from '~/components/Services'
+import TTeam from '~/components/Team'
+import TTestimonial from '~/components/Testimonial'
+
+export default {
+  components: {
+    TBanner,
+    TAbout,
+    TPortfolio,
+    TServices,
+    TTeam,
+    TTestimonial
+  }
 }
+</script>
+
+<style>
+
 </style>
