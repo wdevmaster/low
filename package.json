@@ -28,6 +28,8 @@
     "@adonisjs/session": "^1.0.19",
     "@adonisjs/shield": "^1.0.4",
     "@adonisjs/validator": "^5.1.0",
+    "@nuxtjs/auth-next": "^5.0.0-1620773067.c356fed",
+    "@nuxtjs/axios": "^5.13.4",
     "cross-env": "^3.1.4",
     "mysql": "^2.18.1",
     "nuxt": "latest",

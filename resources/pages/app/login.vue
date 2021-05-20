@@ -1,5 +1,5 @@
 <template>
-  <section class="container d-flex justify-content-center align-items-center" style="flex: 1 0 auto;">
+  <section class="container d-flex justify-content-center align-items-center pt-5" style="flex: 1 0 auto;">
     <div class="signin-form">
       <div class="signin-form-inner">
         <!-- Sign in view-->
@@ -8,15 +8,15 @@
           <p class="fs-ms text-muted mb-4 text-center">
             Sign in to your account using email and password provided during registration.
           </p>
-          <form class="needs-validation" novalidate>
+          <form @submit.prevent="login" class="needs-validation" novalidate>
             <div class="input-group mb-3">
               <i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-              <input class="form-control rounded" type="email" placeholder="Email" required>
+              <input v-model="form.email" class="form-control rounded" type="email" placeholder="Email" required>
             </div>
             <div class="input-group mb-3">
               <i class="ai-lock position-absolute top-50 start-0 translate-middle-y ms-3"></i>
               <div class="password-toggle w-100">
-                <input class="form-control" type="password" placeholder="Password" required>
+                <input v-model="form.password" class="form-control" type="password" placeholder="Password" required>
                 <label class="password-toggle-btn" aria-label="Show/hide password">
                   <input class="password-toggle-check" type="checkbox">
                   <span class="password-toggle-indicator"></span>
@@ -25,7 +25,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center mb-3 pb-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="keep-signed-2">
+                <input v-model="remember" class="form-check-input" type="checkbox" id="keep-signed-2">
                 <label class="form-check-label" for="keep-signed-2">Keep me signed in</label>
               </div>
               <!--
@@ -42,7 +42,26 @@
 
 <script>
 export default {
-  layout: 'auth'
+  layout: 'auth',
+    data () {
+    return {
+      form: {
+        email: '',
+        password: ''
+      },
+      remember: false
+    }
+  },
+  methods: {
+    async login () {
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.form })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 }
 </script>
 

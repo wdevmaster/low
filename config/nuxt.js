@@ -24,19 +24,19 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-      { rel: 'stylesheet', href: 'vendor/simplebar/dist/simplebar.min.css' },
-      { rel: 'stylesheet', href: 'vendor/tiny-slider/dist/tiny-slider.css' },
-      { rel: 'stylesheet', href: 'vendor/lightgallery.js/dist/css/lightgallery.min.css' }
+      { rel: 'stylesheet', href: '/vendor/simplebar/dist/simplebar.min.css' },
+      { rel: 'stylesheet', href: '/vendor/tiny-slider/dist/tiny-slider.css' },
+      { rel: 'stylesheet', href: '/vendor/lightgallery.js/dist/css/lightgallery.min.css' }
     ],
     script: [
-      { src: "vendor/bootstrap/dist/js/bootstrap.bundle.min.js", type: "text/javascript" },
-      { src: "vendor/simplebar/dist/simplebar.min.js", type: "text/javascript" },
-      { src: "vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js", type: "text/javascript" },
-      { src: "vendor/tiny-slider/dist/min/tiny-slider.js", type: "text/javascript" },
-      { src: "vendor/imagesloaded/imagesloaded.pkgd.min.js", type: "text/javascript" },
-      { src: "vendor/shufflejs/dist/shuffle.min.js", type: "text/javascript" },
-      { src: "vendor/lightgallery.js/dist/js/lightgallery.min.js", type: "text/javascript" },
-      { src: "vendor/parallax-js/dist/parallax.min.js", type: "text/javascript" },
+      { src: "/vendor/bootstrap/dist/js/bootstrap.bundle.min.js", type: "text/javascript" },
+      { src: "/vendor/simplebar/dist/simplebar.min.js", type: "text/javascript" },
+      { src: "/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js", type: "text/javascript" },
+      { src: "/vendor/tiny-slider/dist/min/tiny-slider.js", type: "text/javascript" },
+      { src: "/vendor/imagesloaded/imagesloaded.pkgd.min.js", type: "text/javascript" },
+      { src: "/vendor/shufflejs/dist/shuffle.min.js", type: "text/javascript" },
+      { src: "/vendor/lightgallery.js/dist/js/lightgallery.min.js", type: "text/javascript" },
+      { src: "/vendor/parallax-js/dist/parallax.min.js", type: "text/javascript" },
       //{ src: "theme.js", type: "text/javascript" }
     ]
   },
@@ -56,6 +56,38 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#e85a4f' },
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
+
+  /*
+  ** Axios module configuration
+  */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: '/api',
+  },
+
+  /*
+  ** Auth module configuration
+  */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/login', method: 'post', propertyName: 'data' },
+          //user: { url: 'me', method: 'get', propertyName: 'data' },
+          //logout: false
+        }
+      }
+    }
+  },
+
   /*
   ** Point to resources
   */
